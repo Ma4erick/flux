@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pod-info
+  namespace: default
+spec:
+  interval: 10m
+  targetNamespace: default
+  chart:
+    spec:
+      chart: pod-info
+      sourceRef:
+        kind: HelmRepository
+        name: pod-info
